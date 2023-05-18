@@ -1,0 +1,47 @@
+{
+    "name": "capcert",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@cap-js-community/odata-v2-adapter": "^1.10.4",
+        "@sap/cds": "^6",
+        "@sap/xssec": "^3",
+        "express": "^4",
+        "hdb": "^0.19.0",
+        "passport": "^0"
+    },
+    "devDependencies": {
+        "@sap/ux-specification": "latest"
+    },
+    "scripts": {
+        "start": "cds run",
+        "watch-bookslist": "cds watch --open bookslist/webapp/index.html?sap-ui-xx-viewCache=false"
+    },
+    "cds": {
+        "cov2ap": {
+            "plugin": true
+        },
+        "requires": {
+            "[production]": {
+                "db": {
+                    "kind": "hana-cloud"
+                },
+                "auth": {
+                    "kind": "xsuaa"
+                },
+                "approuter": {
+                    "kind": "cloudfoundry"
+                }
+            },
+            "db": {
+                "kind": "sql"
+            }
+        }
+    },
+    "sapux": [
+        "app/bookslist"
+    ]
+}
