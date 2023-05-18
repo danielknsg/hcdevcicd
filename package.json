@@ -14,7 +14,9 @@
         "passport": "^0"
     },
     "devDependencies": {
-        "@sap/ux-specification": "latest"
+        "@sap/eslint-plugin-cds": "^2.6.3",
+        "@sap/ux-specification": "latest",
+        "eslint": "^8.40.0"
     },
     "scripts": {
         "start": "cds run",
